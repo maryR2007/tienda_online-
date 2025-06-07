@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 10, nombre: 'USB 2', precio: 30000 },
     ];
 
-        const productosContainer = document.getElementById('producto');
+        const productosContainer = document.getElementById('productos');
         const listaCarrito = document.getElementById('lista-carrito');
         const totalCarritoElement = document.getElementById('total-carrito');
         const btnComprar = document.getElementById('btn-comprar');
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let carrito =  [];
         let totalCarrito = 0;
 
-        // Funcion para agregar un producto al carrito
+        // Funciòn para agregar un producto al carrito
         function agregarAlCarrito(id) {
             const producto = productos.find(p => p.id === id);
             if (producto) {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Funcion para actualizar la visualizacion del carrito
+        // Funciòn para actualizar la visualizaciòn del carrito
         function actualizarCarrito() {
             listaCarrito.innerHTML = '';
             totalCarrito = 0;
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
             totalCarritoElement.textContent = `Total: $${totalCarrito.toLocaleString()}`;
         }
 
-        // Funcion para mostrar la factura
+        // Funciòn para mostrar la factura
         function mostrarFactura() {
             itemsFacturaDiv.innerHTML = '';
             let totalFactura = 0;
@@ -68,11 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
             totalFactura += producto.precio;
         });   
        
-        totalCarritoElement.textContent = `Total Factura: $${totalFactura.toLocaleString()}`;
+        totalFacturaElement.textContent = `Total Factura: $${totalFactura.toLocaleString()}`;
         facturaSection.style.display = 'block';
     }
 
-    // Funcion para limpiar el carrito
+    // Funciòn para limpiar el carrito
     function limpiarCarrito() {
         carrito = [];
         totalCarrito = 0;
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if(carrito.length > 0)  {
             mostrarFactura();
         } else  {
-            alert("El carrito esta vacio. Por favor, agregue productos antes de comprar.");
+            alert("El carrito està vacìo. Por favor, agregue productos antes de comprar.");
         }
     });
 
